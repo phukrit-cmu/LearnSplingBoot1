@@ -1,6 +1,7 @@
 package th.mfu;
 
 public class Customer {
+    private int id;
     private String name;
     private String email;
     private String address;
@@ -9,7 +10,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String email, String address, String phone) {
+    public Customer(int id, String name, String email, String address, String phone) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
@@ -25,6 +27,14 @@ public class Customer {
     public Customer(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
