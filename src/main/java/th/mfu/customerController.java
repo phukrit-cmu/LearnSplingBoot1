@@ -20,6 +20,7 @@ public class customerController {
    private int nextId = 1;
 
 
+
    @PostMapping("/customer")
    public ResponseEntity<String> createCustomer(@RequestBody Customer customer) {
        customers.put(nextId++, customer);
