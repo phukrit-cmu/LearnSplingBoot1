@@ -12,5 +12,15 @@ public class HelloController {
         return "Hello World!";
     }
 
-   
+    @RequestMapping("/")
+    String index() {
+        return "Welcome to the Hello World application!";
+    }
+
+    @RequestMapping("/hi/{name}")
+    String hi(@PathVariable("name") String name) {
+        return "Hi " + name + "!";
+    }
+
+
 }
