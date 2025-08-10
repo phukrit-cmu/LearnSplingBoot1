@@ -1,32 +1,41 @@
 package th.mfu;
 
+import java.time.LocalDate;
+
+
+
 public class Customer {
     private int id;
     private String name;
     private String email;
     private String address;
     private String phone;
+    @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate birthday;
 
     public Customer() {
     }
 
-    public Customer(int id, String name, String email, String address, String phone) {
+    public Customer(int id, String name, String email, String address, String phone, LocalDate birthday) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.phone = phone;
+        this.birthday = birthday;
     }
 
-    public Customer(String name, String email, String address) {
+    public Customer(String name, String email, String address, LocalDate birthday) {
         this.name = name;
         this.email = email;
         this.address = address;
+        this.birthday = birthday;
     }
 
-    public Customer(String name, String email) {
+    public Customer(String name, String email, LocalDate birthday) {
         this.name = name;
         this.email = email;
+        this.birthday = birthday;
     }
 
     public int getId() {
@@ -67,5 +76,13 @@ public class Customer {
     
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }
