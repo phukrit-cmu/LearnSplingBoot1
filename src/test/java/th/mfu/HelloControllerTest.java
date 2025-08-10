@@ -16,17 +16,21 @@ public class HelloControllerTest {
 
         // Act
         String response = controller.hello();
-        String indexResponse = controller.index();
         // Assert
         assertEquals("Hello World!", response);
-        assertEquals("Welcome to the Hello World application!", indexResponse);
     }
-
     @Test
     public void testHi() {
         // Act
         String response = controller.hi("John");
         // Assert
         assertEquals("Hi John!", response);
+    }
+    @Test
+    public void testIndex() {
+        // Act
+        String response = controller.index();
+        // Assert
+        assertEquals("Welcome to the Hello World application!", response);
     }
 }
